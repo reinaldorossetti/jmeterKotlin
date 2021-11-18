@@ -133,7 +133,7 @@ $(document).ready(function() {
         widgets: ['zebra']
     });
 
-    var data = {"OkPercent": 41.333333333333336, "KoPercent": 58.666666666666664};
+    var data = {"OkPercent": 50.733333333333334, "KoPercent": 49.266666666666666};
     var dataset = [
         {
             "label" : "KO",
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 1500, 880, 58.666666666666664, 21018.455999999973, 2384, 52834, 39875.70000000001, 42790.100000000006, 48057.780000000006, 26.520040310461273, 798.6853380642139, 6.36738225654603], "isController": false}, "titles": ["Label", "#Samples", "KO", "Error %", "Average", "Min", "Max", "90th pct", "95th pct", "99th pct", "Transactions\/s", "Received", "Sent"], "items": [{"data": ["HTTP Request", 1500, 880, 58.666666666666664, 21018.455999999973, 2384, 52834, 39875.70000000001, 42790.100000000006, 48057.780000000006, 26.520040310461273, 798.6853380642139, 6.36738225654603], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 1500, 739, 49.266666666666666, 27602.499333333384, 2272, 114961, 52387.600000000006, 60868.450000000004, 102876.54000000001, 12.608750472828143, 945.3340153222587, 3.019450967721599], "isController": false}, "titles": ["Label", "#Samples", "KO", "Error %", "Average", "Min", "Max", "90th pct", "95th pct", "99th pct", "Transactions\/s", "Received", "Sent"], "items": [{"data": ["HTTP Request", 1500, 739, 49.266666666666666, 27602.499333333384, 2272, 114961, 52387.600000000006, 60868.450000000004, 102876.54000000001, 12.608750472828143, 945.3340153222587, 3.019450967721599], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -215,7 +215,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["400\/Bad Request", 1, 0.11363636363636363, 0.06666666666666667], "isController": false}, {"data": ["500\/Internal Server Error", 879, 99.88636363636364, 58.6], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["Non HTTP response code: org.apache.http.ConnectionClosedException\/Non HTTP response message: Premature end of Content-Length delimited message body (expected: 1,259,828; received: 1,113,712)", 1, 0.13531799729364005, 0.06666666666666667], "isController": false}, {"data": ["500\/Internal Server Error", 735, 99.45872801082544, 49.0], "isController": false}, {"data": ["Non HTTP response code: org.apache.http.NoHttpResponseException\/Non HTTP response message: serverest.dev:443 failed to respond", 3, 0.4059539918809202, 0.2], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -226,7 +226,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 1500, 880, "500\/Internal Server Error", 879, "400\/Bad Request", 1, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["HTTP Request", 1500, 880, "500\/Internal Server Error", 879, "400\/Bad Request", 1, null, null, null, null, null, null], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 1500, 739, "500\/Internal Server Error", 735, "Non HTTP response code: org.apache.http.NoHttpResponseException\/Non HTTP response message: serverest.dev:443 failed to respond", 3, "Non HTTP response code: org.apache.http.ConnectionClosedException\/Non HTTP response message: Premature end of Content-Length delimited message body (expected: 1,259,828; received: 1,113,712)", 1, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["HTTP Request", 1500, 739, "500\/Internal Server Error", 735, "Non HTTP response code: org.apache.http.NoHttpResponseException\/Non HTTP response message: serverest.dev:443 failed to respond", 3, "Non HTTP response code: org.apache.http.ConnectionClosedException\/Non HTTP response message: Premature end of Content-Length delimited message body (expected: 1,259,828; received: 1,113,712)", 1, null, null, null, null], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 
