@@ -29,8 +29,8 @@ jobs:
     - name: Run tests
       if: always()
       continue-on-error: true
-      run: mvn clean test -Dtest=PerformanceServeRest -DthreadCount=300 -Diterations=3
-           echo "NOW::$(date +'%d%m%Y')" >> $GITHUB_ENV
+      run: mvn clean test -Dtest=PerformanceServeRest -DthreadCount=300 -Diterations=3 |
+           echo "NOW::$(date +'%d%m%Y')" >> $GITHUB_ENV |
            echo $NOW
     - name: Publishing artifact to GitHub Actions
       uses: actions/upload-artifact@v2
