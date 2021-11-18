@@ -12,10 +12,13 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        machines: [M1]
+        machines: [M1,M2]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
+      run: echo "NOW::$(date +'%d%m%Y')" >> $GITHUB_ENV
+           echo $NOW
+
     - name: Set up JDK 11
       uses: actions/setup-java@v1
       with:
@@ -34,11 +37,11 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: reportJmeter
-        path: ./target/reportJmeter
+        path: ./target/reportJmeter/
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages  # default: gh-pages
-        publish_dir: ./target/reportJmeter
+        publish_dir: ./target/reportJmeter/

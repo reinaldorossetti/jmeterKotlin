@@ -73,7 +73,7 @@ class PerformanceServeRest: BaseTestPerformance() {
                 responseAssertion().containsSubstrings("quantidade"),
                 //resultsTreeVisualizer()
         ).rampTo(configJmeter.threadCount, Duration.ofSeconds(configJmeter.timeoutIteration)).holdIterating(configJmeter.iterations),
-        //htmlReporter(name),
+        htmlReporter(name),
         ).run()
         Assertions.assertThat(stats.overall().sampleTimePercentile99()).isLessThan(Duration.ofSeconds(30))
     }
