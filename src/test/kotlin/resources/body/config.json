@@ -1,5 +1,5 @@
 {
-  "threadCount":"300",
-  "iterations":"1",
+  "threadCount":"50",
+  "iterations":"2",
   "timeoutIteration":5.0
 }

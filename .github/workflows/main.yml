@@ -32,7 +32,7 @@ jobs:
     - name: Run tests
       if: always()
       continue-on-error: true
-      run: mvn clean test -Dtest=PerformanceServeRest -DthreadCount=500 -Diterations=1
+      run: mvn clean test -Dtest=PerformanceServeRestUsuarios -DthreadCount=500 -Diterations=5
     - name: Publishing artifact to GitHub Actions
       uses: actions/upload-artifact@v2
       with:
