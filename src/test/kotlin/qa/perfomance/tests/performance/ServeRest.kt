@@ -54,7 +54,7 @@ class PerformanceServeRestUsuarios: BaseTestPerformance() {
                     )
                     .contentType(ContentType.APPLICATION_JSON)
                     .header("Accept", "application/json"),
-                    //header("monitor", "false"),
+                    header("monitor", "false"),
                 // Temporizador Uniforme Aleatório que pausa a thread com um tempo aleatório com distribuição uniforme.
                 // valor minimo e valor maximo em milissegundo
                 uniformRandomTimer(500, 5000),
